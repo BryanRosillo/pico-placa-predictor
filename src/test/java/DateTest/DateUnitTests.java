@@ -21,7 +21,7 @@ public class DateUnitTests {
     @ParameterizedTest
     @DisplayName("Test 02 - incorrect date creation")
     @ValueSource(strings = {"20XX-01-01", "2001-80-01", "2001-01-78", "2001/01/01"})
-    void testIncorrectCreationDateWithInvalidYear(String stringDate){
+    void testIncorrectCreationDateWithInvalidData(String stringDate){
         Exception exception = assertThrows(IllegalArgumentException.class, () -> new Date(stringDate));
         assertEquals("Invalid date, please enter a valid value.", exception.getMessage());
     }
