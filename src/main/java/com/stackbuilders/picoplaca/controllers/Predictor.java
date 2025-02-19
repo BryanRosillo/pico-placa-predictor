@@ -8,9 +8,9 @@ public class Predictor {
 
     private CarDriver carDriver;
     public boolean canBeOnTheRoad;
-    private final Map<String, Integer[] > DAYS = Map.of("MONDAY", new Integer[]{1, 2}, "TUESDAY", new Integer[]{3, 4}, "WEDNESDAY", new Integer[]{5, 6}, "THURSDAY", new Integer[]{7, 8}, "FRIDAY", new Integer[]{9, 0});
-    private final Map<String, LocalTime> FIRST_SCHEDULE = Map.of("begin", LocalTime.of(7, 0), "end", LocalTime.of(9, 30));
-    private final Map<String, LocalTime> SECOND_SCHEDULE = Map.of("begin", LocalTime.of(16, 0), "end", LocalTime.of(19, 30));
+    private final Map<String, Integer[] > days = Map.of("MONDAY", new Integer[]{1, 2}, "TUESDAY", new Integer[]{3, 4}, "WEDNESDAY", new Integer[]{5, 6}, "THURSDAY", new Integer[]{7, 8}, "FRIDAY", new Integer[]{9, 0});
+    private final Map<String, LocalTime> firstSchedule = Map.of("begin", LocalTime.of(7, 0), "end", LocalTime.of(9, 30));
+    private final Map<String, LocalTime> secondSchedule = Map.of("begin", LocalTime.of(16, 0), "end", LocalTime.of(19, 30));
 
 
     public Predictor(CarDriver carDriver) {
@@ -23,10 +23,10 @@ public class Predictor {
         LocalTime time = carDriver.getTime().getLocalTime();
         Integer lastDigit = Integer.parseInt(numbers.substring(numbers.length() - 1));
         this.canBeOnTheRoad = true;
-        DAYS.forEach((day, digits) -> {
-            if(digits[0] == lastDigit || digits[1] == lastDigit){
+        days.forEach((day, digits) -> {
+            if(digits[0].equals(lastDigit) || digits[1].equals(lastDigit)){
                 if(day.equals(dayOfTheWeek)){
-                    if(isTimeRange(time, FIRST_SCHEDULE) || isTimeRange(time, SECOND_SCHEDULE)){
+                    if(isTimeRange(time, firstSchedule) || isTimeRange(time, secondSchedule)){
                         this.canBeOnTheRoad = false;
                     }
                 }

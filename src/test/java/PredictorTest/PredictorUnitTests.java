@@ -2,15 +2,11 @@ package PredictorTest;
 
 import com.stackbuilders.picoplaca.controllers.Predictor;
 import com.stackbuilders.picoplaca.models.CarDriver;
-import com.stackbuilders.picoplaca.models.Date;
-import com.stackbuilders.picoplaca.models.LicensePlateNumber;
-import com.stackbuilders.picoplaca.models.Time;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class PredictorUnitTests {
+class PredictorUnitTests {
 
     @Test
     @DisplayName("Test 01 - correct prediction: the car driven cannot be on the road")

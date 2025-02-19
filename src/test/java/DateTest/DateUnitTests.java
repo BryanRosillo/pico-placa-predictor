@@ -8,7 +8,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class DateUnitTests {
+class DateUnitTests {
 
     @Test
     @DisplayName("Test 01 - correct date creation")

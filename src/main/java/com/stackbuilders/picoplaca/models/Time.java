@@ -4,14 +4,14 @@ import java.time.LocalTime;
 
 public class Time {
 
-    private LocalTime time;
+    private LocalTime localTime;
 
     public Time(String time) {
         if (time==null || time.isEmpty() || !this.validateTime(time)) {
             throw new IllegalArgumentException("Invalid time, please enter a valid value.");
         }
         try {
-            this.time = LocalTime.parse(time);
+            this.localTime = LocalTime.parse(time);
         } catch (Exception e) {
             throw new IllegalArgumentException("Invalid time, please enter a valid value.");
         }
@@ -22,7 +22,7 @@ public class Time {
     }
 
     public LocalTime getLocalTime() {
-        return time;
+        return localTime;
     }
 
 }

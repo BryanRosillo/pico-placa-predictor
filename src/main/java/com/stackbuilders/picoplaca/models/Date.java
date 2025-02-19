@@ -3,14 +3,14 @@ package com.stackbuilders.picoplaca.models;
 import java.time.LocalDate;
 
 public class Date {
-    private LocalDate date;
+    private LocalDate localDate;
 
     public Date(String date){
         if(date == null || date.isEmpty()||!this.validateDate(date)){
             throw new IllegalArgumentException("Invalid date, please enter a valid value.");
         }
         try{
-            this.date = LocalDate.parse(date);
+            this.localDate = LocalDate.parse(date);
         }catch (Exception e){
             throw new IllegalArgumentException("Invalid date, please enter a valid value.");
         }
@@ -22,6 +22,6 @@ public class Date {
     }
 
     public LocalDate getLocaDate(){
-        return this.date;
+        return this.localDate;
     }
 }
