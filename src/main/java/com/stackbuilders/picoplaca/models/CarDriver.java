@@ -9,9 +9,9 @@ public class CarDriver {
 
     public CarDriver(String username, String date, String time, String licensePlate) {
         this.username = username;
+        this.licensePlate = new LicensePlateNumber(licensePlate);
         this.date = new Date(date);
         this.time = new Time(time);
-        this.licensePlate = new LicensePlateNumber(licensePlate);
     }
 
     public String getUsername() {

@@ -14,8 +14,8 @@ public class LicensePlateNumber {
         this.numbers = parts[1];
     }
 
-    private boolean validateLicencePlateNumber(String licencePlateNumber) {
-        return licencePlateNumber.matches("^[A-Z]{3}-\\d{3,4}$");
+    private boolean validateLicencePlateNumber(String licensePlateNumber) {
+        return licensePlateNumber.matches("^[A-Z]{3}-\\d{3,4}$");
     }
 
     public String getLetters() {
